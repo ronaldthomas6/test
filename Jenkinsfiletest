@@ -3,13 +3,9 @@ pipeline
 {
     agent any
     
-    
-    stages
-    {
-        stage("Git Checkout")
-        {
+    stage('Clone') {
             checkout scm
         }
-     }
+     
      
 }     
