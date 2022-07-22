@@ -8,9 +8,7 @@ pipeline
     {
         stage("Git Checkout")
         {
-            steps{
-                git credentialsId: 'github', url: ''
-            }
+            checkout scm
         }
      }
      
