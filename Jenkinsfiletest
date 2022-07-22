@@ -1,7 +1,4 @@
-pipeline
-
-{
-    agent any
+node (label: 'ci-vm459') {
     
    stage('Checkout') {
         checkout([
@@ -12,6 +9,5 @@ pipeline
             doGenerateSubmoduleConfigurations: false
         ])
     }
-     
      
 }     
