@@ -3,9 +3,15 @@ pipeline
 {
     agent any
     
-    stage('Clone') {
-            checkout scm
-        }
+   stage('Checkout') {
+        checkout([
+            $class: 'GitSCM',
+            branches: main,
+            extensions: scm.extensions + [[$class: 'LocalBranch'], [$class: 'WipeWorkspace']],
+            userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/ronaldthomas6/test.git']],
+            doGenerateSubmoduleConfigurations: false
+        ])
+    }
      
      
 }     
